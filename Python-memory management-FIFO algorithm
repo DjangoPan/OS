@@ -1,0 +1,28 @@
+count=0
+num=int(input("请输入请求次数："))
+pages=int(input("请输入页框数："))
+import random
+pagenum=[]
+for i in range(num):
+    x=random.randint(0,20)
+    print("%d号页面请求！" %x)
+    if(x in pagenum):
+        print("木有缺页！开心(～￣▽￣)～ ")
+        pagenum.remove(x)
+        pagenum.insert(0,x)
+        print(pagenum)
+        print("\n")
+    else:
+        print("缺页啦！")
+        count+=1
+        if(len(pagenum)<pages):
+            pagenum.insert(0,x)
+            print(pagenum)
+            print("\n")
+        else:
+            pagenum.insert(0,x)
+            pagenum.pop()
+            print(pagenum)
+            print("\n")
+print("页框数为%d，总共请求了%d次，发生%d次缺页！" %(pages,num,count))
+print("缺页中断率为%.2f%%" %(count/num*100))
