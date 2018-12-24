@@ -1,10 +1,11 @@
 count=0
+n=int(input("请输入页面总数："))
 num=int(input("请输入请求次数："))
 pages=int(input("请输入页框数："))
 import random
 pagenum=[]
 for i in range(num):
-    x = random.randint(0,20)
+    x = random.randint(0,n-1)
     print("%d号页面请求！"%x)
     if len(pagenum)<pages:
         print("页框数还够用哦！顺序如下：")
