@@ -13,7 +13,9 @@ for i in range(num):
             pagenum.pop(pagenum.index(x))
             pagenum.insert(0,x)
         else:
+            print("缺页啦！")
             pagenum.insert(0,x)
+            count+=1
         print(pagenum)
         print("\n")
     else:
@@ -33,6 +35,4 @@ for i in range(num):
 print("页框数为%d，总共请求了%d次，发生%d次缺页！" %(pages,num,count))
 print("缺页中断率为%.2f%%" %(count/num*100))
 
-
-
-纯原创！
+纯手打！
